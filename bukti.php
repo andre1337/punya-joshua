@@ -1,0 +1,44 @@
+<?php
+require_once ("fpdf/fpdf.php");
+$pdf = new FPDF('P','cm','A5');
+$pdf->AddPage();
+
+$pdf->SetFont('Arial','B',14);
+$pdf->Image('img/240_F_83110044_tY6a1Y99glDLVubAUvRRH1SZiBJDq81a.jpg',1,1,2,2);                      
+$pdf->SetX(3);             
+$pdf->MultiCell(19.5,0.5,'E-FISH',0,'L');
+$pdf->SetX(3);             
+$pdf->MultiCell(19.5,0.5,'WEB PEMESANAN BIBIT & PAKAN IKAN',0,'L');
+$pdf->SetFont('Arial','B',10);             
+$pdf->SetX(3);             
+$pdf->MultiCell(10.5,0.5,'Jl. A.H. Nasution no 18 RT 002/008 kel cipadung kec cibiru 40614, Telepon : 0227813484',0,'L');
+$pdf->SetX(3);            
+ $pdf->Line(1,3.1,14.5,3.1);             
+ $pdf->SetLineWidth(0.1);             
+ $pdf->Line(1,3.2,14.5,3.2);
+ $pdf->SetLineWidth(0);             
+ $pdf->Ln();     
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(10,1,'Bukti Pemesanan');
+$pdf->SetX(1);  
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,3,'Ini merupakan tanda bukti bahwa Anda telah melakukan transaksi.');
+$pdf->SetX(1);  
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,4,'Tanda bukti ini ditunjukan saat pesanan Anda diterima, silakan untuk dicetak.');
+$pdf->SetX(1);  
+$pdf->SetFont('Arial','B',10);
+$pdf->Cell(10,6,'Isi Data Diri Anda');
+$pdf->SetX(1); 
+$pdf->Image('img/-Barcode_32896.jpg',1,7,4,1);
+$pdf->SetX(1);  
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,10,'Nama Lengkap   :');
+$pdf->SetX(1);  
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,12,'Alamat                :');
+$pdf->SetX(11);
+$pdf->SetFont('Times','',10);
+$pdf->Cell(10,15,'Tanda Penerima');
+$pdf->Output();  
+?>
